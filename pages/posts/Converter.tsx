@@ -37,7 +37,7 @@ const Converter: FC = () => {
             <p className='flex justify-center items-center text-green-500 text-xl'><AiFillCheckCircle />Converted!</p>
             <p className='text-3xl m-2'>2進数: {convert(2)}</p>
             <p className='text-3xl m-2'>8進数: {convert(8)}</p>
-            <p className='text-3xl m-2'>10進数: {decimal}</p>
+            <p className='text-3xl m-2'>10進数: {convert(10)}</p>
             <p className='text-3xl m-2'>16進数: {convert(16)}</p>
         </div>
         }
