@@ -3,15 +3,18 @@ import { Props } from '../types/type'
 
 const Octal: FC<Props> = ({ setDecimal }) => {
     const [ octalVal, setOcralVal ] = useState('')
+    const excludeNums = ['8', '9']
 
     const octalToDecimal = () => {
-        const result = octalVal.indexOf('8') || octalVal.indexOf('9')
-        if(result === -1) {
-            setDecimal(parseInt(octalVal, 8).toString())
-        } else {
-            setDecimal('')
-            return
+        const checkArray = octalVal.split('')
+        for(let i = 0;i < checkArray.length;i++) {
+            const result = checkArray[i] === excludeNums[0] || checkArray[i] === excludeNums[1]
+            if(result) {
+                setDecimal('')
+                return
+            }
         }
+        setDecimal(parseInt(octalVal, 8).toString())
     }
   return (
     <div className='octal flex mb-3 mt-3 justify-center items-center'>

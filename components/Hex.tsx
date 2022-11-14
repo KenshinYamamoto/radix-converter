@@ -15,7 +15,7 @@ const Hex: FC<Props> = ({ setDecimal }) => {
                 }
             }
         }
-        setDecimal(parseInt(hexVal.toString(), 16).toString())
+        setDecimal(parseInt(hexVal, 16).toString())
     }
   return (
     <div className="hex decimal flex mb-3 mt-3 justify-center items-center">

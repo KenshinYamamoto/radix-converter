@@ -10,14 +10,13 @@ const Binary: FC<Props> = ({ setDecimal }) => {
         const checkArray = binaryVal.split('')
 
         for(let i = 0;i < checkArray.length;i++) {
-            const result = checkArray[i] !== includebinaryNums[0] && checkArray[i] !== includebinaryNums[1];
+            const result = checkArray[i] !== includebinaryNums[0] && checkArray[i] !== includebinaryNums[1]
             if(result) {
                 setDecimal('')
                 return
-            } else {
-                setDecimal(parseInt(binaryVal, 2).toString())
             }
         }
+        setDecimal(parseInt(binaryVal, 2).toString())
     }
 
   return (
