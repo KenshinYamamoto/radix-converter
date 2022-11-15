@@ -9,6 +9,7 @@ import Head from 'next/head'
 
 const Converter: FC = () => {
     const [ decimal, setDecimal ] = useState('')
+    const decimalNum = 0
 
     const convert = (to: number) => {
         const decimalNum = parseInt(decimal)

@@ -3,13 +3,13 @@ import { Props } from '../types/type'
 
 const Hex: FC<Props> = ({ setDecimal }) => {
     const [ hexVal, setHexVal ] = useState('')
-    const includeOctalNums = ['a', 'b', 'c', 'd', 'e', 'f']
+    const includeHexNums = ['a', 'b', 'c', 'd', 'e', 'f']
 
     const hexToDecimal = () => {
         const checkArray = hexVal.toLowerCase().split('')
         for(let i = 0;i < checkArray.length;i++) {
-            if(checkArray[i] !== includeOctalNums[0] && checkArray[i] !== includeOctalNums[1] && checkArray[i] !== includeOctalNums[2] && checkArray[i] !== includeOctalNums[3] && checkArray[i] !== includeOctalNums[4] && checkArray[i] !== includeOctalNums[5]) {
-                if(typeof(checkArray[i]) !== 'number') {
+            if(checkArray[i] !== includeHexNums[0] && checkArray[i] !== includeHexNums[1] && checkArray[i] !== includeHexNums[2] && checkArray[i] !== includeHexNums[3] && checkArray[i] !== includeHexNums[4] && checkArray[i] !== includeHexNums[5]) {
+                if(isNaN(parseInt(checkArray[i]))) {
                     setDecimal('')
                     return
                 }

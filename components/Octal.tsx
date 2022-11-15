@@ -3,12 +3,12 @@ import { Props } from '../types/type'
 
 const Octal: FC<Props> = ({ setDecimal }) => {
     const [ octalVal, setOcralVal ] = useState('')
-    const excludeNums = ['8', '9']
+    const excludeOcralNums = ['8', '9']
 
     const octalToDecimal = () => {
         const checkArray = octalVal.split('')
         for(let i = 0;i < checkArray.length;i++) {
-            const result = checkArray[i] === excludeNums[0] || checkArray[i] === excludeNums[1]
+            const result = checkArray[i] === excludeOcralNums[0] || checkArray[i] === excludeOcralNums[1]
             if(result) {
                 setDecimal('')
                 return
